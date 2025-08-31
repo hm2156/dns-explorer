@@ -1,15 +1,21 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
 from .resolver import DNSResolver
 from .cache import TTLStore
 
+load_dotenv() 
+
 app = FastAPI(title="DNS Explorer API")
+
+allowed = os.getenv("ALLOWED_ORIGINS", "http://localhost:5173")
+allow_origins = [o.strip() for o in allowed.split(",") if o.strip()]
 
 # allow your React dev server during dev
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allow_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
