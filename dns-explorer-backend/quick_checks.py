@@ -1,6 +1,6 @@
 import requests, json, sys
 
-BASE = "http://127.0.0.1:8000"
+BASE = "https://dns-backend.onrender.com"
 
 def fetch(path, **params):
     r = requests.get(f"{BASE}{path}", params=params, timeout=30)
