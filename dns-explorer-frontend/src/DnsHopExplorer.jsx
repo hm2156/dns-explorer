@@ -1107,7 +1107,7 @@ export default function DnsHopExplorer() {
     };
   }, []);
 
-  const [baseUrl, setBaseUrl] = useState("https://dns-backend.onrender.com");
+  const [baseUrl, setBaseUrl] = useState("https://dns-explorer.onrender.com");
   const [name, setName] = useState("www.google.com");
   const [rtype, setRtype] = useState("A");
   const [useCache, setUseCache] = useState(false);
@@ -1258,7 +1258,7 @@ export default function DnsHopExplorer() {
               <input
                 value={baseUrl}
                 onChange={(e) => setBaseUrl(e.target.value)}
-                placeholder="https://dns-backend.onrender.com"
+                placeholder="https://dns-explorer.onrender.com"
                 className="w-full h-[40px] rounded-lg border border-white/10 bg-black/40 px-3.5 text-sm text-white/90 placeholder:text-white/30 focus:border-red-500/40 focus:outline-none focus:ring-2 focus:ring-red-500/30"
               />
             </div>
